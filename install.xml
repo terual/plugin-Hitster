@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<extension>
+	<name>PLUGIN_LYRIONSTER</name>
+	<module>Plugins::Lyrionster::Plugin</module>
+	<version>1.0</version>
+	<description>PLUGIN_LYRIONSTER_DESC</description>
+	<creator>terual</creator>
+	<defaultState>enabled</defaultState>
+	<type>2</type><!-- type=extension -->
+	<targetApplication>
+		<minVersion>7.0</minVersion>
+		<maxVersion>*</maxVersion>
+	</targetApplication>
+</extension>

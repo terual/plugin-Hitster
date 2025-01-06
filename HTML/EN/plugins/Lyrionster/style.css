@@ -30,8 +30,7 @@ body {
     font-size: 2.5rem;
 }
 
-.qr-reader,
-.video-player {
+.qr-reader {
     background: #ffffff;
     margin: 20px 0;
     padding: 20px;
@@ -103,15 +102,6 @@ body {
     background-color: #f4f4f4;
 }
 
-.settings_div {
-    width: 100%;
-    position: absolute;
-    bottom: 0.5rem;
-    left: 0;
-    padding: 0 0.5rem;
-    display: none;
-}
-
 @media screen and (max-width: 768px) {
     .header h1 {
         font-size: 2rem;
@@ -141,18 +131,6 @@ body {
     left: 0;
 }
 
-#videotitle {
-    display:  none;
-}
-
-#videoduration {
-    display:  none;
-}
-
-#videoid {
-    display: none ;
-}
-
 #cancelScanButton {
     position: absolute;
     display:none;
@@ -161,10 +139,9 @@ body {
     z-index: 4;
 }
 
-#cookielist {
-    display: none;
-}
-
-#playback-duration {
-    width: 50px;
+.bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
