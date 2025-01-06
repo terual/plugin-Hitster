@@ -51,11 +51,20 @@ sub handleWeb {
 	
 	if ($params->{'track'}) {
 		if (defined $client) {
-			$client->execute([ 'playlist', 'clear' ] );
+			$client->execute([ 'playlist', 'clear' ]);
 			$client->execute([ 'playlist', 'play', $params->{'track'} ]);
 			$log->info("Playlist play: $params->{'track'} on client " . $client->macaddress);
 		} else {
 			$log->info("No client");
+		}
+	}
+	
+	if ($params->{'pause'}) {
+		if (defined $client) {
+			$log->info("Execute pause on client " . $client->macaddress);
+			$client->execute([ 'pause' ]);
+		} else {
+			$log->info("No client to pause");
 		}
 	}
 

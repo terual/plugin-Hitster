@@ -161,3 +161,10 @@ document.getElementById('cancelScanButton').addEventListener('click', function()
     document.getElementById('qr-reader').style.display = 'none'; // Hide the scanner after successful scan
     document.getElementById('cancelScanButton').style.display = 'none'; // Hide the cancel-button
 });
+
+document.getElementById('startstopButton').addEventListener('click', function() {
+    console.log(`(un)pausing`);
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", `/plugins/Lyrionster/index.html?pause`, true);
+    xhttp.send();
+});

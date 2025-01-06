@@ -12,9 +12,10 @@ The app side of the plugin is based on [SongSeeker](https://github.com/andygrube
 ## TODO
 
 - Better name
-- Make start/stop button work
+- Add security to plugin endpoint
+- Make the app launch better from the LMS menu
 - Create dropdown to select player
 - Do something about the styling
 - Add csv lists for other language Hitster games
-- Add song URLs to csv lists with links to Tidal/Qobuz
 - CSV is now served with html extension as csv does not work
+- Add support for Tidal/Qobuz (this means that for every song a Tidal/Qobuz URL needs to be added to the csv)
