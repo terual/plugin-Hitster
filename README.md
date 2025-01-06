@@ -1,8 +1,8 @@
 # Lyrionster
 
-Play the [https://hitstergame.com](Hitster game) on your Lyrion-connected player. This plugin makes use of the Spotify integration in LMS.
+Play the [Hitster game](https://hitstergame.com) on your [Lyrion](https://lyrion.org)-connected player. This plugin makes use of the Spotify integration in LMS.
 
-The app side of the plugin is based on [https://github.com/andygruber/songseeker](SongSeeker) by andygruber. 
+The app side of the plugin is based on [SongSeeker](https://github.com/andygruber/songseeker) by [andygruber](https://github.com/andygruber). 
 
 ## Compatible games
 
