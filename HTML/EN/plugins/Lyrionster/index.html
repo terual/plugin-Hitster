@@ -25,15 +25,23 @@
 
     <link rel="manifest" href="[% webroot %]plugins/Lyrionster/manifest.json">
 
+    <script type="text/javascript" src="[% webroot %]html/common.js?r=[% revision %]"></script>
 </head>
 
 <body>   
     <h2>Lyrionster</h2>
     
-    [% IF player == '' %]
-        <p>[% "PLUGIN_LYRIONSTER_NO_PLAYER_FOUND_REFRESH" | string %]</p>
+    [% IF player_chooser_list %]
+    <div id="playerChooser">
+        [% "PLUGIN_LYRIONSTER_PLAYING_ON" | string %]
+        <form method="GET" action="[% webroot %]plugins/Lyrionster/index.html">
+        <select name="player" onchange="switchPlayer(this);">
+            [% player_chooser_list %]
+        </select>
+        </form>
+    </div>
     [% ELSE %]
-        <p>[% "PLUGIN_LYRIONSTER_PLAYING_ON" | string %] [% player %]</p>
+    <p>[% "PLUGIN_LYRIONSTER_NO_PLAYER_FOUND_REFRESH" | string %]</p>
     [% END %]
     
     <div id="qr-reader">
@@ -50,6 +58,58 @@
     </div>
 
     <script type="module" src="[% webroot %]plugins/Lyrionster/app.js"></script>
+
+<script>
+
+function switchPlayer(player_List) {
+	player    = encodeURIComponent(player_List.options[player_List.selectedIndex].value);
+	var newPlayer = "=" + player;
+
+	try {
+		// change for skins with frames
+		doc = parent.frames[browserTarget];
+
+		parent.playlist.location = "playlist.html?player" + newPlayer;
+		window.location = "status_header.html?player" + newPlayer;
+
+		if (doc.location.href.indexOf('home')    == -1 &&
+		    doc.location.href.indexOf('settings') == -1 &&
+		    doc.location.href.indexOf('plugins') == -1) {
+
+			for (var j=0;j < doc.document.links.length; j++) {
+				var myString = new String(doc.document.links[j].href);
+				var rString = newPlayer;
+				var rExp = /(player=(\w\w(:|%3A)){5}(\w\w))|(player=(\d{1,3}\.){3}\d{1,3})/gi;
+
+				doc.document.links[j].href = myString.replace(rExp, rString);
+			}
+
+			// deal with form values.
+			newValue(doc.document,player);
+
+		} else {
+
+			myString = new String(doc.location.href);
+			var rExp = /(=(\w\w(:|%3A)){5}(\w\w))|(=(\d{1,3}\.){3}\d{1,3})/gi;
+
+			doc.location = myString.replace(rExp, newPlayer);
+
+		}
+	}  catch(e) {
+
+		myString = new String(this.location.href);
+
+		var rExp = /(=(\w\w(:|%3A)){5}(\w\w))|(=(\d{1,3}\.){3}\d{1,3})/gi;
+
+		if (rExp.exec(myString)) {
+			this.location = myString.replace(rExp, newPlayer);
+		} else {
+			this.location = this.location.href + "?player" + newPlayer;
+		}
+	}
+}
+
+</script>
 
 </body>
 

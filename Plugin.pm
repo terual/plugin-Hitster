@@ -22,6 +22,7 @@ use strict;
 use Slim::Utils::Strings qw (string);
 use Slim::Utils::Log;
 use Slim::Web::Pages;
+use Slim::Player::Client;
 
 my $log = Slim::Utils::Log->addLogCategory({
 	'category'     => 'plugin.Lyrionster',
@@ -48,6 +49,22 @@ sub webPages {
 
 sub handleWeb {
 	my ($client, $params) = @_;
+	
+	$params->{'playercount'} = Slim::Player::Client::clientCount();
+	my @players = Slim::Player::Client::clients();
+	if (scalar(@players) >= 1) {
+		my %clientlist = ();
+		for my $eachclient (@players) {
+			$clientlist{$eachclient->id()} =  $eachclient->name();
+			if ($eachclient->isSynced()) {
+				$clientlist{$eachclient->id()} .= " (" . string('SYNCHRONIZED_WITH') . " " .
+					$eachclient->syncedWithNames() .")";
+			}
+		}
+		$params->{'player_chooser_list'} = Slim::Web::Pages::Common->options($client->id(), \%clientlist, $params->{'skinOverride'}, 50);
+	}
+	$log->info( "player_chooser_list: " . Data::Dump::dump($params->{'player_chooser_list'}) );
+	$log->info( "playercount: " . Data::Dump::dump($params->{'playercount'}) );
 	
 	if ($params->{'track'}) {
 		if (defined $client) {
