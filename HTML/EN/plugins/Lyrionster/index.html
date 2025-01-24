@@ -7,6 +7,7 @@
         import QrScanner from "https://unpkg.com/qr-scanner/qr-scanner.min.js";
     </script>
     <link rel="stylesheet" href="[% webroot %]plugins/Lyrionster/style.css">
+    <link rel="stylesheet" href="[% webroot %]plugins/Lyrionster/html/font/font.css">
     <meta name=viewport content="width=device-width, initial-scale=1">
 
     <!-- Allow web app to be run in full-screen mode -->
@@ -26,10 +27,19 @@
     <link rel="manifest" href="[% webroot %]plugins/Lyrionster/manifest.json">
 
     <script type="text/javascript" src="[% webroot %]html/common.js?r=[% revision %]"></script>
+    
+    <style>
+    :root {
+      --arrow-bg: rgba(255, 255, 255, 0.3);
+      --arrow-icon: url([% webroot %]plugins/Lyrionster/html/images/Caret_down_font_awesome_whitevariation.svg);
+      --option-bg: white;
+      --select-bg: rgba(255, 255, 255, 0.2);
+    }
+    </style>
 </head>
 
 <body>   
-    <h2>Lyrionster</h2>
+    <h1>Lyrionster</h1>
     
     [% IF player_chooser_list %]
     <div id="playerChooser">
@@ -43,15 +53,16 @@
     [% ELSE %]
     <p>[% "PLUGIN_LYRIONSTER_NO_PLAYER_FOUND_REFRESH" | string %]</p>
     [% END %]
+    <br/>
     
     <div id="qr-reader">
         <button id="cancelScanButton" class="button">Cancel Scan</button>
         <video id="qr-video"></video>
     </div>
 
-    <button id="startScanButton" class="button_startscan">Start Scan</button>
+    <button id="startScanButton" class="button button_startscan">Start Scan</button>
     <br />
-    <button id="startstopButton" class="button_startstop">Play/pause</button>
+    <button id="startstopButton" class="button button_startstop">Play/pause</button>
 
     <div class="bottom">
         <a href="https://github.com/terual/plugin-Lyrionster/" target="_blank">View the Lyrionster project on GitHub</a>

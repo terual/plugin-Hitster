@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (hitsterData) {
                 console.log("Hitster data:", hitsterData.id, hitsterData.lang);
                 try {
-                    const csvContent = await getCachedCsv(`/plugins/Lyrionster/html/playlists/hitster-${hitsterData.lang}.html`);
+                    const csvContent = await getCachedCsv(`/plugins/Lyrionster/html/playlists/hitster-${hitsterData.lang}.csv`);
                     const url = lookupURL(hitsterData.id, csvContent);
                     if (url) {
                         // Handle link obtained from the CSV
@@ -165,6 +165,6 @@ document.getElementById('cancelScanButton').addEventListener('click', function()
 document.getElementById('startstopButton').addEventListener('click', function() {
     console.log(`(un)pausing`);
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", `/plugins/Lyrionster/index.html?pause`, true);
+    xhttp.open("GET", `/plugins/Lyrionster/index.html?pause=1`, true);
     xhttp.send();
 });

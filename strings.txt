@@ -8,5 +8,5 @@ PLUGIN_LYRIONSTER_NO_PLAYER_FOUND_REFRESH
 	EN	Your player was not found, please refresh after connecting a player.
 	NL	Jouw muziekspeler is niet gevonden, ververs zodra je een speler hebt verbonden.
 PLUGIN_LYRIONSTER_PLAYING_ON
-	EN	We are playing on player
-	NL	We spelen op muziekspeler
+	EN	We are playing on player:
+	NL	We spelen op muziekspeler:

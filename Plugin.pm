@@ -63,25 +63,25 @@ sub handleWeb {
 		}
 		$params->{'player_chooser_list'} = Slim::Web::Pages::Common->options($client->id(), \%clientlist, $params->{'skinOverride'}, 50);
 	}
-	$log->info( "player_chooser_list: " . Data::Dump::dump($params->{'player_chooser_list'}) );
-	$log->info( "playercount: " . Data::Dump::dump($params->{'playercount'}) );
+	$log->debug( "player_chooser_list: " . Data::Dump::dump($params->{'player_chooser_list'}) );
+	$log->debug( "playercount: " . Data::Dump::dump($params->{'playercount'}) );
 	
 	if ($params->{'track'}) {
 		if (defined $client) {
 			$client->execute([ 'playlist', 'clear' ]);
 			$client->execute([ 'playlist', 'play', $params->{'track'} ]);
-			$log->info("Playlist play: $params->{'track'} on client " . $client->macaddress);
+			$log->debug("Playlist play: $params->{'track'} on client " . $client->macaddress);
 		} else {
-			$log->info("No client");
+			$log->debug("No client");
 		}
 	}
 	
 	if ($params->{'pause'}) {
 		if (defined $client) {
-			$log->info("Execute pause on client " . $client->macaddress);
+			$log->debug("Execute pause on client " . $client->macaddress);
 			$client->execute([ 'pause' ]);
 		} else {
-			$log->info("No client to pause");
+			$log->debug("No client to pause");
 		}
 	}
 
