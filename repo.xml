@@ -8,8 +8,8 @@
       <title lang="EN">Lyrionster</title>
       <desc lang="EN">Play the Hitster game on your Lyrion-connected player. This plugin makes use of the Spotify integration in LMS.</desc>
       <creator>Terual</creator>
-      <url></url>
-      <sha></sha>
+      <url>https://github.com/terual/plugin-Lyrionster/releases/download/0.1/plugin-Lyrionster-0.1.zip</url>
+      <sha>50a04226c484dbc19f3b1cf3b480cc91dfe43870</sha>
     </plugin>
   </plugins>
 </extensions>
