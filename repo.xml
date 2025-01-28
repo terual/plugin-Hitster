@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<extensions>
+  <details>
+    <title lang="EN">Lyrionster</title>
+  </details>
+  <plugins>
+    <plugin maxTarget="*" minTarget="8.0" name="Lyrionster" version="0.1">
+      <title lang="EN">Lyrionster</title>
+      <desc lang="EN">Play the Hitster game on your Lyrion-connected player. This plugin makes use of the Spotify integration in LMS.</desc>
+      <creator>Terual</creator>
+      <url></url>
+      <sha></sha>
+    </plugin>
+  </plugins>
+</extensions>
