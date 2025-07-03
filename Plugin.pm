@@ -1,4 +1,4 @@
-# Lyrionster
+# Hitster
 # Copyright (C) 2025
 # 
 # This program is free software: you can redistribute it and/or modify
@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-package Plugins::Lyrionster::Plugin;
+package Plugins::Hitster::Plugin;
 
 use base qw(Slim::Plugin::Base);
 
@@ -25,9 +25,9 @@ use Slim::Web::Pages;
 use Slim::Player::Client;
 
 my $log = Slim::Utils::Log->addLogCategory({
-	'category'     => 'plugin.Lyrionster',
+	'category'     => 'plugin.Hitster',
 	'defaultLevel' => 'INFO',
-	'description'  => 'PLUGIN_LYRIONSTER',
+	'description'  => 'PLUGIN_HITSTER',
 });
 
 
@@ -38,13 +38,13 @@ sub initPlugin {
 }
 
 sub getDisplayName() {
-	return 'PLUGIN_LYRIONSTER';
+	return 'PLUGIN_HITSTER';
 }
 
 sub webPages {
-	Slim::Web::Pages->addPageFunction("plugins/Lyrionster/index.html", \&handleWeb);
-	Slim::Web::Pages->addPageLinks("plugins", { 'PLUGIN_LYRIONSTER' => 'plugins/Lyrionster/index.html' });
-	Slim::Web::Pages->addPageLinks('icons',   { 'PLUGIN_LYRIONSTER' => 'html/images/years.png' });
+	Slim::Web::Pages->addPageFunction("plugins/Hitster/index.html", \&handleWeb);
+	Slim::Web::Pages->addPageLinks("plugins", { 'PLUGIN_HITSTER' => 'plugins/Hitster/index.html' });
+	Slim::Web::Pages->addPageLinks('icons',   { 'PLUGIN_HITSTER' => 'html/images/years.png' });
 }
 
 sub handleWeb {
@@ -85,7 +85,7 @@ sub handleWeb {
 		}
 	}
 
-	return Slim::Web::HTTP::filltemplatefile('plugins/Lyrionster/index.html', $params);
+	return Slim::Web::HTTP::filltemplatefile('plugins/Hitster/index.html', $params);
 }
 
 

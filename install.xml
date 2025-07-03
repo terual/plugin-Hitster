@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <extension>
-  <name>PLUGIN_LYRIONSTER</name>
-  <module>Plugins::Lyrionster::Plugin</module>
+  <name>PLUGIN_HITSTER</name>
+  <module>Plugins::Hitster::Plugin</module>
   <version>0.1</version>
-  <description>PLUGIN_LYRIONSTER_DESC</description>
+  <description>PLUGIN_HITSTER_DESC</description>
   <creator>terual</creator>
   <defaultState>enabled</defaultState>
   <type>2</type>
