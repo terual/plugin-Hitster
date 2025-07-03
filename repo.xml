@@ -4,12 +4,12 @@
     <title lang="EN">Hitster</title>
   </details>
   <plugins>
-    <plugin maxTarget="*" minTarget="8.0" name="Hitster" version="0.1">
+    <plugin maxTarget="*" minTarget="8.0" name="Hitster" version="0.2">
       <title lang="EN">Hitster</title>
       <desc lang="EN">Play the Hitster game on your Lyrion-connected player. This plugin makes use of the Spotify integration in LMS.</desc>
       <creator>Terual</creator>
-      <url>https://github.com/terual/plugin-Hitster/releases/download/0.1/plugin-Lyrionster-0.1.zip</url>
-      <sha>50a04226c484dbc19f3b1cf3b480cc91dfe43870</sha>
+      <url>https://github.com/terual/plugin-Hitster/releases/download/0.2/plugin-Hitster-0.2.zip</url>
+      <sha>7d74dec3dfc9250705eb72fc9e9b6ad488fabfe1</sha>
     </plugin>
   </plugins>
 </extensions>
