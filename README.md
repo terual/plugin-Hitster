@@ -1,4 +1,4 @@
-# Hitster
+# Hitster plugin for Lyrion
 
 Play the [Hitster game](https://hitstergame.com) on your [Lyrion](https://lyrion.org)-connected player. This plugin makes use of the Spotify integration in LMS.
 
