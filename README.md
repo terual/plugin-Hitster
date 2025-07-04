@@ -6,9 +6,10 @@ The app side of the plugin is based on [SongSeeker](https://github.com/andygrube
 
 ## Compatible games
 
-- Hitster Original Deutsch
-- Hitster Original Nederlands
-- Hitster Guilty Pleasures Nederlands
+- Hitster Deutschland
+- Hitster Deutschland Summer Party
+- Hitster Nederlands
+- Hitster Nederlands Guilty Pleasures
 
 ## TODO
 
