@@ -2,7 +2,7 @@
 <extension>
   <name>PLUGIN_HITSTER</name>
   <module>Plugins::Hitster::Plugin</module>
-  <version>0.3</version>
+  <version>0.4</version>
   <description>PLUGIN_HITSTER_DESC</description>
   <creator>terual</creator>
   <defaultState>enabled</defaultState>
