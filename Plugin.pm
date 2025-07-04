@@ -43,8 +43,8 @@ sub getDisplayName() {
 
 sub webPages {
 	Slim::Web::Pages->addPageFunction("plugins/Hitster/index.html", \&handleWeb);
-	Slim::Web::Pages->addPageLinks("plugins", { 'PLUGIN_HITSTER' => 'plugins/Hitster/index.html' });
-	Slim::Web::Pages->addPageLinks('icons',   { 'PLUGIN_HITSTER' => 'html/images/years.png' });
+	Slim::Web::Pages->addPageLinks("apps",  { 'PLUGIN_HITSTER' => 'plugins/Hitster/index.html' });
+	Slim::Web::Pages->addPageLinks('icons', { 'PLUGIN_HITSTER' => 'html/images/years.png' });
 }
 
 sub handleWeb {
